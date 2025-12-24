@@ -1,5 +1,5 @@
 # Monica Voice Agent - Twilio Integration Setup Guide
-## One of my major work contributions , I learnt alot while working on monica itbwas a game chnager and exposure to deep tech . Always grateful for the opportuanity and A big shoutout thanks to CEO and Founder for his constant support and guidance and my teammate PAVAN NAINI , working alongside him taught me great values and work experince . Thankyou to all other team members -Kshitiz , Anish , Gayatri , Ashutosh ad the manamenet team . 
+## One of my major work contributions , I learnt alot while working on Monica it was a game chnager and exposure to deep tech . Always grateful for the opportuanity and A big shoutout thanks to CEO and Founder for his constant support and guidance and my teammate PAVAN NAINI , working alongside him taught me great values and work experince . Thankyou to all other team members -Kshitiz , Anish , Gayatri , Ashutosh ad the manamenet team . 
 
 ## Complete Setup Process
 
