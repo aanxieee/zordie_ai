@@ -26,7 +26,7 @@ def test_voice_interview():
     
     name = input("Enter candidate name: ").strip() or "Test Candidate"
     
-    print(f"\n📞 Starting voice interview for {name}...")
+    print(f"\n Starting voice interview for {name}...")
     
     # Start the call
     try:
@@ -41,27 +41,27 @@ def test_voice_interview():
         )
         
         if response.status_code != 200:
-            print(f"❌ Error: {response.status_code}")
+            print(f" Error: {response.status_code}")
             print(response.text)
             return
         
         data = response.json()
         
         if not data.get("success"):
-            print(f"❌ Failed to start call: {data.get('error')}")
+            print(f" Failed to start call: {data.get('error')}")
             return
         
         session_id = data["session_id"]
         call_sid = data.get("call_sid")
         
-        print(f"✅ Call initiated successfully!")
+        print(f" Call initiated successfully!")
         print(f"   Session ID: {session_id}")
         print(f"   Call SID: {call_sid}")
         print(f"\n📱 You should receive a call shortly...")
         print(f"   Answer the call and respond to Monica's questions")
         
         # Monitor the interview progress
-        print(f"\n⏳ Monitoring interview progress...")
+        print(f"\n Monitoring interview progress...")
         
         for i in range(30):  # Check for 5 minutes max
             time.sleep(10)
@@ -78,11 +78,11 @@ def test_voice_interview():
                     print(f"   Progress: {progress:.0f}% - Question {current_q}/{total_q} - Status: {interview_status}")
                     
                     if interview_status == "completed":
-                        print(f"\n✅ Interview completed!")
+                        print(f"\n Interview completed!")
                         break
         
         # Get the final report
-        print(f"\n📊 Fetching interview report...")
+        print(f"\n Fetching interview report...")
         time.sleep(2)
         
         report_response = requests.get(f"{API_BASE}/report/{session_id}")
@@ -108,10 +108,10 @@ def test_voice_interview():
                 print(f"=" * 60)
         
     except requests.exceptions.ConnectionError:
-        print("❌ Error: Could not connect to the API")
+        print(" Error: Could not connect to the API")
         print("   Make sure the server is running on http://localhost:8000")
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
 
 
 if __name__ == "__main__":
