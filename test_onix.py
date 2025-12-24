@@ -21,9 +21,9 @@ print("=" * 60)
 print("\n✓ Test 1: Module Import")
 try:
     from zordie_agents.zordie_agents.onix import inference
-    print("  ✅ Onix inference module loaded successfully")
+    print("   Onix inference module loaded successfully")
 except Exception as e:
-    print(f"  ❌ Failed to load module: {e}")
+    print(f"   Failed to load module: {e}")
     print(f"  Python path: {sys.path[:3]}")
     import traceback
     traceback.print_exc()
@@ -36,7 +36,7 @@ email = inference.extract_email_from_text(test_text)
 print(f"  Input: '{test_text}'")
 print(f"  Extracted: {email}")
 assert email == "john.doe@example.com", "Email extraction failed"
-print("  ✅ Email extraction working")
+print("   Email extraction working")
 
 # Test 3: Phone Extraction
 print("\n✓ Test 3: Phone Extraction")
@@ -45,7 +45,7 @@ phone = inference.extract_phone_from_text(test_text)
 print(f"  Input: '{test_text}'")
 print(f"  Extracted: {phone}")
 assert phone is not None, "Phone extraction failed"
-print("  ✅ Phone extraction working")
+print("   Phone extraction working")
 
 # Test 4: Email Template Generation
 print("\n✓ Test 4: Email Template Generation")
@@ -58,7 +58,7 @@ print(f"  Generated template length: {len(email_template)} chars")
 assert "Jane Smith" in email_template, "Name not in template"
 assert "Senior Python Developer" in email_template, "Position not in template"
 assert "TechCorp" in email_template, "Company not in template"
-print("  ✅ Email template generation working")
+print("   Email template generation working")
 print("\n  Sample output:")
 print("  " + email_template.split("\n")[0])  # Show subject line
 
@@ -74,7 +74,7 @@ summary = inference.generate_candidate_summary(test_profile)
 print(f"  Summary length: {len(summary)} chars")
 assert "John Doe" in summary, "Name not in summary"
 assert "DevOps Engineer" in summary, "Position not in summary"
-print("  ✅ Candidate summary working")
+print("  Candidate summary working")
 print("\n  Sample output:")
 for line in summary.split("\n")[:3]:
     print(f"  {line}")
@@ -94,7 +94,7 @@ print(f"  Enriched fields: {list(enriched.keys())}")
 assert enriched["email"] == "alice.johnson@email.com", "Email not enriched"
 assert enriched["phone"] is not None, "Phone not enriched"
 assert enriched["onix_processed"] == True, "Processing flag not set"
-print(f"  ✅ Profile enrichment working")
+print(f"   Profile enrichment working")
 print(f"     - Email: {enriched['email']}")
 print(f"     - Phone: {enriched['phone']}")
 
@@ -108,7 +108,7 @@ print(f"  Template length: {len(notes_template)} chars")
 assert "Bob Williams" in notes_template, "Name not in template"
 assert "Data Scientist" in notes_template, "Position not in template"
 assert "Technical Skills Assessment" in notes_template, "Missing section"
-print("  ✅ Interview notes template working")
+print("   Interview notes template working")
 
 # Test 8: Rejection Email
 print("\n✓ Test 8: Rejection Email Template")
@@ -119,7 +119,7 @@ rejection = inference.generate_rejection_email(
 print(f"  Template length: {len(rejection)} chars")
 assert "Charlie Brown" in rejection, "Name not in template"
 assert "Backend Engineer" in rejection, "Position not in template"
-print("  ✅ Rejection email template working")
+print("   Rejection email template working")
 
 # Test 9: Full Agent Run (with contracts)
 print("\n✓ Test 9: Full Agent Execution")
@@ -142,29 +142,29 @@ try:
         data = result.data
         print(f"  Enriched profile: {data['onix']['enriched_profile']['name']}")
         print(f"  Templates generated: {list(data['onix']['templates'].keys())}")
-        print("  ✅ Full agent execution working")
+        print("   Full agent execution working")
     else:
-        print(f"  ⚠️  Agent returned ok=False: {result.warnings}")
+        print(f"    Agent returned ok=False: {result.warnings}")
         
 except ImportError as e:
-    print(f"  ⚠️  Contracts not available (expected in minimal test): {e}")
-    print("  ℹ️  This is OK - contracts are available in Docker environment")
+    print(f"   Contracts not available (expected in minimal test): {e}")
+    print("    This is OK - contracts are available in Docker environment")
 
 # Summary
 print("\n" + "=" * 60)
-print("✅ ONIX AGENT VERIFICATION COMPLETE")
+print(" ONIX AGENT VERIFICATION COMPLETE")
 print("=" * 60)
-print("\n📊 Test Results:")
-print("  ✅ Module imports")
-print("  ✅ Email extraction")
-print("  ✅ Phone extraction")
-print("  ✅ Email template generation")
-print("  ✅ Candidate summary generation")
-print("  ✅ Profile enrichment")
-print("  ✅ Interview notes template")
-print("  ✅ Rejection email template")
-print("\n🎯 Onix Agent Status: PRODUCTION READY")
-print("\n📋 Available Functions:")
+print("\n Test Results:")
+print("   Module imports")
+print("  Email extraction")
+print("   Phone extraction")
+print("   Email template generation")
+print("   Candidate summary generation")
+print("   Profile enrichment")
+print("   Interview notes template")
+print("   Rejection email template")
+print("\n Onix Agent Status: PRODUCTION READY")
+print("\n Available Functions:")
 functions = [
     "extract_email_from_text(text)",
     "extract_phone_from_text(text)",
