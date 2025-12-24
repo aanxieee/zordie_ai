@@ -1,8 +1,9 @@
 # Monica Voice Agent - Twilio Integration Setup Guide
+## One of my major work contributions , I learnt alot while working on monica itbwas a game chnager and exposure to deep tech . Always grateful for the opportuanity and A big shoutout thanks to CEO and Founder for his constant support and guidance and my teammate PAVAN NAINI , working alongside him taught me great values and work experince . Thankyou to all other team members -Kshitiz , Anish , Gayatri , Ashutosh ad the manamenet team . 
 
 ## Complete Setup Process
 
-### 1. Twilio Account Setup ✅
+### 1. Twilio Account Setup 
 You've already completed this step! You have:
 - Twilio Account SID
 - Auth Token
